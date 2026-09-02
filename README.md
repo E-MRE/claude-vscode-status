@@ -65,9 +65,15 @@ The bridge can be removed at any time with **Claude Status: Disable Usage Bridge
 
 No shell, `jq`, Python, or manual setup commands are required.
 
-### Marketplace
+### VS Code Marketplace
 
-Marketplace installation can be added after the project is published under a VS Code Marketplace publisher account.
+Install directly from the VS Code Extensions view by searching for:
+
+**Claude VS Code Status**
+
+Publisher: **E-MRE**
+
+You can also install it from the Visual Studio Marketplace once the extension is published there.
 
 ## First run
 
@@ -111,7 +117,7 @@ When the fallback is used, the tooltip labels the window size as a fallback.
 
 ## Platform support
 
-Version 1.1.0 is designed for:
+Version 1.1.1 is designed for:
 
 - macOS — primary tested platform
 - Linux — supported by the same POSIX bridge and platform-independent path handling
@@ -174,7 +180,7 @@ npm run compile
 
 Press `F5` in VS Code to launch an Extension Development Host.
 
-For a Marketplace release, set the `publisher` field in `package.json` to your real VS Code Marketplace publisher ID and package/publish with the official VS Code extension tooling.
+Marketplace releases are published under the `E-MRE` publisher using the official VS Code extension tooling.
 
 ## License
 

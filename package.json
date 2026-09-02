@@ -2,9 +2,18 @@
   "name": "claude-vscode-status",
   "displayName": "Claude VS Code Status",
   "description": "Local-only Claude Code model, context tokens, and 5h/7d usage in the VS Code status bar. Supports native Claude VS Code transcripts.",
-  "version": "1.1.0",
-  "publisher": "claude-status-local",
+  "version": "1.1.1",
+  "publisher": "E-MRE",
   "license": "MIT",
+  "pricing": "Free",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/E-MRE/claude-vscode-status.git"
+  },
+  "homepage": "https://github.com/E-MRE/claude-vscode-status#readme",
+  "bugs": {
+    "url": "https://github.com/E-MRE/claude-vscode-status/issues"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
