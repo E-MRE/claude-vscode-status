@@ -1,0 +1,84 @@
+{
+  "name": "claude-vscode-status",
+  "displayName": "Claude VS Code Status",
+  "description": "Local-only Claude Code model, context tokens, and 5h/7d usage in the VS Code status bar. Supports native Claude VS Code transcripts.",
+  "version": "1.1.0",
+  "publisher": "claude-status-local",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "claude",
+    "claude code",
+    "anthropic",
+    "status bar",
+    "tokens",
+    "context",
+    "usage"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "claudeVscodeStatus.installBridge",
+        "title": "Claude Status: Enable/Update 5h & 7d Usage Bridge"
+      },
+      {
+        "command": "claudeVscodeStatus.refresh",
+        "title": "Claude Status: Refresh"
+      },
+      {
+        "command": "claudeVscodeStatus.selectSession",
+        "title": "Claude Status: Select/Pin Session"
+      },
+      {
+        "command": "claudeVscodeStatus.clearSession",
+        "title": "Claude Status: Clear Session Pin (Auto-detect)"
+      },
+      {
+        "command": "claudeVscodeStatus.removeBridge",
+        "title": "Claude Status: Disable Usage Bridge and Restore Previous StatusLine"
+      }
+    ],
+    "configuration": {
+      "title": "Claude VS Code Status",
+      "properties": {
+        "claudeVscodeStatus.refreshInterval": {
+          "type": "number",
+          "default": 2,
+          "minimum": 1,
+          "maximum": 60,
+          "description": "Seconds between local cache checks. No network requests are made."
+        },
+        "claudeVscodeStatus.showTokens": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show current input tokens / context window size next to Context %."
+        },
+        "claudeVscodeStatus.defaultContextWindowSize": {
+          "type": "number",
+          "default": 1000000,
+          "minimum": 1000,
+          "description": "Fallback context window size for native Claude VS Code transcripts when the transcript does not expose an explicit window size."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.7.2"
+  }
+}
